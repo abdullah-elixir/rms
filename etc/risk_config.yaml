@@ -1,0 +1,18 @@
+instruments:
+  - id: 0
+    symbol: "TEST_INST"
+    max_order_qty: 100
+    max_order_notional: 1000000.0
+    price_tolerance_pct: 0.02
+    max_spread_ticks: 5
+    init_margin_pct: 0.05
+    maint_margin_pct: 0.025
+    max_daily_position: 1000
+accounts:
+  - id: 0
+    name: "TestAccount"
+    max_order_rate_per_sec: 100
+    max_concurrent_orders: 50
+    max_leverage: 10.0
+    max_drawdown_pct: 0.1
+    kill_switch: false

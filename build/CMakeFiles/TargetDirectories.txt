@@ -1,0 +1,9 @@
+/home/muhammad-abdullah/rms/build/CMakeFiles/rms_core.dir
+/home/muhammad-abdullah/rms/build/CMakeFiles/edit_cache.dir
+/home/muhammad-abdullah/rms/build/CMakeFiles/rebuild_cache.dir
+/home/muhammad-abdullah/rms/build/tests/CMakeFiles/pretrade_checks_test.dir
+/home/muhammad-abdullah/rms/build/tests/CMakeFiles/vcm_module_test.dir
+/home/muhammad-abdullah/rms/build/tests/CMakeFiles/posttrade_controls_test.dir
+/home/muhammad-abdullah/rms/build/tests/CMakeFiles/integration_test.dir
+/home/muhammad-abdullah/rms/build/tests/CMakeFiles/edit_cache.dir
+/home/muhammad-abdullah/rms/build/tests/CMakeFiles/rebuild_cache.dir
