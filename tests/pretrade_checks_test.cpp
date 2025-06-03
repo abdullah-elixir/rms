@@ -8,7 +8,7 @@
 
 TEST(PreTradeChecksTest, MaxOrderQty) {
     rms::PreTradeChecks checker;
-    rms::Order o{0, 0, 50, 100.0};
+    Order o{0, 0, 50, 100.0};
     instrument_limits_shards[0][0].max_order_qty = 100;
     EXPECT_TRUE(checker.checkMaxOrderQty(o));
     std::cout<< checker.checkMaxOrderQty(o) << std::endl;

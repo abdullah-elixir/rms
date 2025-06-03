@@ -25,8 +25,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o.d"
   "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o"
   "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o.d"
-  "CMakeFiles/rms_core.dir/tests/pretrade_checks_test.cpp.o"
-  "CMakeFiles/rms_core.dir/tests/pretrade_checks_test.cpp.o.d"
   "rms_core"
   "rms_core.pdb"
 )

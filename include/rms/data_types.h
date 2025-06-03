@@ -43,3 +43,24 @@ using AccountLimitsShard = std::array<AccountLimits, ACCOUNTS_PER_SHARD>;
 extern InstrumentLimitsShard instrument_limits_shards[NUM_SHARDS];
 extern AccountLimitsShard account_limits_shards[NUM_SHARDS];
 extern std::array<folly::F14FastMap<uint32_t, Position>, NUM_SHARDS> position_store;
+
+struct Order {
+    uint32_t account_id;
+    uint32_t instrument_id;
+    int64_t  quantity;
+    double   price;
+    char     symbol[16];
+    char     side[4];   // "BUY" or "SELL"
+    uint64_t order_id;
+};
+
+struct TradeExecution {
+    uint32_t account_id;
+    uint32_t instrument_id;
+    int64_t  quantity;
+    double   price;
+    char     symbol[16];
+    bool     is_buy;
+    uint64_t trade_id;
+    uint64_t order_id;
+};

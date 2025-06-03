@@ -1,21 +1,53 @@
-//
-// Created by muhammad-abdullah on 5/27/25.
-//
-
 // File: include/rms/messaging.hpp
 #pragma once
-#include <string>
+
+#include <atomic>
 #include <functional>
-#include "posttrade_controls.h"
+#include <memory>
+#include <thread>
+#include <Aeron.h>
+#include <Context.h>
+#include <Subscription.h>
+#include <Publication.h>
+#include <concurrent/AtomicBuffer.h>
+#include "data_types.h"      // For Order, TradeExecution, etc.
 
 namespace rms {
+
     using OrderCallback = std::function<void(const Order &)>;
     using TradeCallback = std::function<void(const TradeExecution &)>;
 
     class Messaging {
     public:
+        Messaging();
+        ~Messaging();
+
+        /// Initialize Aeron, set up Publication & Subscription, and register callbacks.
+        /// Returns false if Aeron setup fails.
         bool initialize(OrderCallback ocb, TradeCallback tcb);
-        void run();
+
+        /// Shutdown Aeron and stop listener thread.
         void shutdown();
+
+        /// Send a TradeExecution message out via Aeron Publication.
+        bool sendTradeExecution(const TradeExecution& trade);
+
+        ///fragment handler
+        aeron::fragment_handler_t fragHandler();
+
+    private:
+        /// Listener loop that polls Aeron Subscription.
+        void listenerLoop();
+
+        std::atomic_bool running_{false};
+        std::thread listenerThread_;
+
+        OrderCallback orderCb_;
+        TradeCallback tradeCb_;
+
+        std::shared_ptr<aeron::Aeron> aeron_;
+        std::shared_ptr<aeron::Subscription> subscription_;
+        std::shared_ptr<aeron::Publication> publication_;
     };
-}
+
+}  // namespace rms

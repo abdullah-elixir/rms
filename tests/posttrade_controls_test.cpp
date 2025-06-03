@@ -7,7 +7,7 @@
 #include "data_types.h"
 TEST(PostTradeControlsTest, BasicPnL) {
     rms::PostTradeControls pt;
-    rms::TradeExecution t{0,0,10,100.0,true};
+    TradeExecution t{0,0,10,100.0,true};
     position_store[0][0] = Position();
     pt.onTrade(t);
     // After buy, unrealized_pnl = 0

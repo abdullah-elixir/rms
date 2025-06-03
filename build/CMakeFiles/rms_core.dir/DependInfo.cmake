@@ -21,7 +21,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/muhammad-abdullah/rms/src/utils/logger.cpp" "CMakeFiles/rms_core.dir/src/utils/logger.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/utils/logger.cpp.o.d"
   "/home/muhammad-abdullah/rms/src/utils/time_utils.cpp" "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o.d"
   "/home/muhammad-abdullah/rms/src/vcm_module.cpp" "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o.d"
-  "/home/muhammad-abdullah/rms/tests/pretrade_checks_test.cpp" "CMakeFiles/rms_core.dir/tests/pretrade_checks_test.cpp.o" "gcc" "CMakeFiles/rms_core.dir/tests/pretrade_checks_test.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

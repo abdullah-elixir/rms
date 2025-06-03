@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.31)
+cmake_minimum_required(VERSION 3.16)
 project(rms LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -12,19 +12,19 @@ file(GLOB_RECURSE RMS_SRC
     src/*.cpp
 )
 
-add_executable(rms_core main.cpp ${RMS_SRC}
-        tests/pretrade_checks_test.cpp
-)
-
+add_executable(rms_core main.cpp ${RMS_SRC})
+# Required so folly can locate its dependencies
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/usr/share/cmake-4.0/Modules")
 find_package(yaml-cpp REQUIRED)
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
-# Assume Aeron and Prometheus client libs are installed or stubbed
-# pkg_check_modules(AERON aeron-cpp)
-# include_directories(${AERON_INCLUDE_DIRS})
-# link_libraries(${AERON_LIBRARIES})
+find_package(aeron REQUIRED)
+find_package(GTest REQUIRED)
+find_package(fmt REQUIRED)
+find_package(folly REQUIRED)
+find_package(Boost REQUIRED)
 
-target_link_libraries(rms_core yaml-cpp Threads::Threads)
+target_link_libraries(rms_core yaml-cpp Threads::Threads folly aeron aeron_client GTest::GTest GTest::Main glog fmt)
 
 # Unit tests
 add_subdirectory(tests)

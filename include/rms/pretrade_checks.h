@@ -7,13 +7,6 @@
 #include "data_types.h"
 
 namespace rms {
-    struct Order {
-        uint32_t account_id;
-        uint32_t instrument_id;
-        int64_t quantity;
-        double price;
-    };
-
     class PreTradeChecks {
     public:
         bool checkMaxOrderQty(const Order &order);
