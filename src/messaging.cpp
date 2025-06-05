@@ -80,8 +80,6 @@ aeron::fragment_handler_t Messaging::fragHandler() {
 
 void Messaging::listenerLoop() {
     utils::logInfo("[Messaging] listenerLoop started");
-    // Buffer for deserializing incoming messages
-    static thread_local std::array<std::uint8_t, 256> msgBuffer;
     aeron::FragmentAssembler fragmentAssembler(fragHandler());
     aeron::fragment_handler_t handler = fragmentAssembler.handler();
     aeron::SleepingIdleStrategy sleepStrategy(SLEEP_IDLE_MS);

@@ -1,8 +1,8 @@
 //
 // Created by muhammad-abdullah on 6/4/25.
 //
+#include<concurrent/BackOffIdleStrategy.h>
 #include "sharded_queue.h"
-
 #include "utils/logger.h"
 #include "utils/time_utils.h"
 
@@ -11,12 +11,20 @@ ShardedQueue::ShardedQueue() : _buffer(buffer, MAX_RING_BUFFER_SIZE + aeron::con
 ShardedQueue::~ShardedQueue() = default;
 
 void ShardedQueue::enqueue(aeron::concurrent::AtomicBuffer buffer, int32_t offset, int32_t length) {
-    rms::utils::logInfo("inside enqueue");
+    aeron::concurrent::BackoffIdleStrategy idleStrategy(100,1000);
+    bool isWritten = false;
+    auto start = std::chrono::high_resolution_clock::now();
     int8_t msgType = buffer.getUInt8(offset);
-    std::cout<<"got msgType : "<<msgType<<std::endl;
-    int isSuc = _ring_buffer.write(msgType, buffer, offset, length);
-    if (!isSuc) {
-        rms::utils::logError("failed to enqueue msgType");
+    while(!isWritten) {
+        isWritten = _ring_buffer.write(msgType, buffer, offset, length);
+        if (isWritten) {
+            return;
+        }
+        if (std::chrono::high_resolution_clock::now() - start >= std::chrono::microseconds(50)) {
+            rms::utils::logError("retry timeout");
+            return;
+        }
+        idleStrategy.idle();
     }
 }
 std::optional<std::variant<Order, TradeExecution>> ShardedQueue::dequeue() {
@@ -24,13 +32,16 @@ std::optional<std::variant<Order, TradeExecution>> ShardedQueue::dequeue() {
     _ring_buffer.read([&](int8_t msgType, aeron::concurrent::AtomicBuffer& buffer, int32_t offset, int32_t length) {
         if (msgType == '1') {
             Order order;
-            memcpy(&order, buffer.buffer() + offset + 1, length);
-            rms::utils::logInfo("got order msg type, " + fmt::to_string(order.account_id));
+            if (length >= sizeof(order)) {
+                memcpy(&order, buffer.buffer() + offset + 1, sizeof(order));
+            }
             result.emplace(order);
         }
         else if (msgType == '2') {
             TradeExecution trade;
-            memcpy(&trade, buffer.buffer() + offset + 1, length);
+            if (length >= sizeof(trade)) {
+                memcpy(&trade, buffer.buffer() + offset + 1, sizeof(trade));
+            }
             result.emplace(trade);
         }
         else {
