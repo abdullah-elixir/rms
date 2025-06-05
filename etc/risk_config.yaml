@@ -8,9 +8,41 @@ instruments:
     init_margin_pct: 0.05
     maint_margin_pct: 0.025
     max_daily_position: 1000
+  - id: 1
+    symbol: "TEST_INST1"
+    max_order_qty: 50
+    max_order_notional: 1000.0
+    price_tolerance_pct: 0.05
+    max_spread_ticks: 0.10
+    init_margin_pct: 0.10
+    maint_margin_pct: 0.030
+    max_daily_position: 2000
+  - id: 2
+    symbol: "TEST_INST2"
+    max_order_qty: 50
+    max_order_notional: 1000.0
+    price_tolerance_pct: 0.05
+    max_spread_ticks: 0.10
+    init_margin_pct: 0.10
+    maint_margin_pct: 0.030
+    max_daily_position: 2000
 accounts:
   - id: 0
     name: "TestAccount"
+    max_order_rate_per_sec: 100
+    max_concurrent_orders: 50
+    max_leverage: 10.0
+    max_drawdown_pct: 0.1
+    kill_switch: false
+  - id: 1
+    name: "TestAccount1"
+    max_order_rate_per_sec: 100
+    max_concurrent_orders: 50
+    max_leverage: 10.0
+    max_drawdown_pct: 0.1
+    kill_switch: false
+  - id: 2
+    name: "TestAccount2"
     max_order_rate_per_sec: 100
     max_concurrent_orders: 50
     max_leverage: 10.0

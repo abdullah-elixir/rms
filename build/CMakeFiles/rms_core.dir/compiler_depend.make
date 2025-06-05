@@ -2139,6 +2139,7 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o: /home/muhammad-abdullah/rms/src/mes
   /usr/lib/gcc/x86_64-linux-gnu/11/include/xtestintrin.h \
   /usr/local/include/Aeron.h \
   /usr/local/include/AeronVersion.h \
+  /usr/local/include/BufferBuilder.h \
   /usr/local/include/ClientConductor.h \
   /usr/local/include/CncFileDescriptor.h \
   /usr/local/include/Context.h \
@@ -2146,6 +2147,7 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o: /home/muhammad-abdullah/rms/src/mes
   /usr/local/include/DriverListenerAdapter.h \
   /usr/local/include/DriverProxy.h \
   /usr/local/include/ExclusivePublication.h \
+  /usr/local/include/FragmentAssembler.h \
   /usr/local/include/HeartbeatTimestamp.h \
   /usr/local/include/Image.h \
   /usr/local/include/LogBuffers.h \
@@ -2263,6 +2265,8 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o: /home/muhammad-abdullah/rms/src/mes
   /usr/local/include/folly/portability/Config.h \
   /usr/local/include/folly/portability/Constexpr.h \
   /usr/local/include/folly/portability/Malloc.h \
+  /usr/local/include/protocol/DataHeaderFlyweight.h \
+  /usr/local/include/protocol/HeaderFlyweight.h \
   /usr/local/include/util/BitUtil.h \
   /usr/local/include/util/Exceptions.h \
   /usr/local/include/util/Export.h \
@@ -5149,6 +5153,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 
 /home/muhammad-abdullah/rms/src/posttrade_controls.cpp:
 
+/usr/local/include/protocol/HeaderFlyweight.h:
+
 /home/muhammad-abdullah/rms/src/messaging.cpp:
 
 /usr/include/yaml-cpp/yaml.h:
@@ -5290,6 +5296,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 /usr/local/include/concurrent/AtomicCounter.h:
 
 /usr/local/include/concurrent/AtomicArrayUpdater.h:
+
+/usr/local/include/protocol/DataHeaderFlyweight.h:
 
 /usr/local/include/concurrent/AgentInvoker.h:
 
@@ -5771,6 +5779,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 
+/usr/local/include/BufferBuilder.h:
+
 /usr/include/yaml-cpp/node/detail/iterator.h:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
@@ -5940,6 +5950,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/c++/11/bits/unique_lock.h:
+
+/usr/local/include/FragmentAssembler.h:
 
 /usr/include/c++/11/bits/stringfwd.h:
 

@@ -10,7 +10,7 @@
 bool rms::ConfigLoader::loadConfig(const std::string &filepath) {
     try {
         YAML::Node config = YAML::LoadFile(filepath);
-        // Simplified: do nothing, use defaults
+
         std::cout << "Loaded config from " << filepath << std::endl;
         return true;
     } catch (const std::exception &e) {

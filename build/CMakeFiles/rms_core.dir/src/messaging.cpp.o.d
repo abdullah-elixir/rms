@@ -521,6 +521,10 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o: \
  /usr/local/include/folly/hash/traits.h \
  /usr/local/include/folly/coro/Coroutine.h /usr/include/c++/11/variant \
  /usr/include/c++/11/coroutine \
+ /home/muhammad-abdullah/rms/include/rms/sharded_queue.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
+ /usr/local/include/concurrent/ringbuffer/OneToOneRingBuffer.h \
+ /home/muhammad-abdullah/rms/include/rms/utils/params.h \
  /home/muhammad-abdullah/rms/include/rms/utils/logger.h \
  /usr/local/include/FragmentAssembler.h \
  /usr/local/include/BufferBuilder.h /usr/local/include/Aeron.h \

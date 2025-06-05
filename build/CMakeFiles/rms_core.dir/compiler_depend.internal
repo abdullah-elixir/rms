@@ -2143,6 +2143,7 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/xtestintrin.h
  /usr/local/include/Aeron.h
  /usr/local/include/AeronVersion.h
+ /usr/local/include/BufferBuilder.h
  /usr/local/include/ClientConductor.h
  /usr/local/include/CncFileDescriptor.h
  /usr/local/include/Context.h
@@ -2150,6 +2151,7 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o
  /usr/local/include/DriverListenerAdapter.h
  /usr/local/include/DriverProxy.h
  /usr/local/include/ExclusivePublication.h
+ /usr/local/include/FragmentAssembler.h
  /usr/local/include/HeartbeatTimestamp.h
  /usr/local/include/Image.h
  /usr/local/include/LogBuffers.h
@@ -2267,6 +2269,8 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o
  /usr/local/include/folly/portability/Config.h
  /usr/local/include/folly/portability/Constexpr.h
  /usr/local/include/folly/portability/Malloc.h
+ /usr/local/include/protocol/DataHeaderFlyweight.h
+ /usr/local/include/protocol/HeaderFlyweight.h
  /usr/local/include/util/BitUtil.h
  /usr/local/include/util/Exceptions.h
  /usr/local/include/util/Export.h

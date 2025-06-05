@@ -194,18 +194,13 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/muhammad-abdullah/rms/include/rms/data_types.h \
- /usr/local/include/folly/container/F14Map.h /usr/include/c++/11/cstddef \
- /usr/local/include/folly/Portability.h \
- /usr/local/include/folly/CPortability.h \
- /usr/local/include/folly/portability/Config.h \
- /usr/local/include/folly/folly-config.h /usr/include/c++/11/version \
- /usr/local/include/folly/Range.h \
- /usr/local/include/folly/hash/SpookyHashV2.h /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/local/include/folly/lang/CString.h \
- /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
- /usr/local/include/folly/lang/Exception.h /usr/include/c++/11/functional \
- /usr/include/c++/11/bits/std_function.h \
+ /usr/local/include/concurrent/BackOffIdleStrategy.h \
+ /usr/include/c++/11/algorithm /usr/include/c++/11/bits/ranges_algo.h \
+ /usr/include/c++/11/bits/ranges_algobase.h /usr/include/c++/11/iterator \
+ /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/include/c++/11/bits/ranges_util.h \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
  /usr/include/c++/11/unordered_map \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/hashtable.h \
@@ -213,7 +208,25 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/fmt/format.h \
+ /usr/include/c++/11/bits/erase_if.h \
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /usr/local/include/concurrent/Atomic64.h \
+ /usr/local/include/util/Platform.h \
+ /usr/local/include/concurrent/atomic/Atomic64_gcc_x86_64.h \
+ /usr/local/include/util/BitUtil.h /usr/include/c++/11/cassert \
+ /usr/include/assert.h /usr/local/include/util/Exceptions.h \
+ /usr/local/include/util/MacroUtil.h \
+ /home/muhammad-abdullah/rms/include/rms/data_types.h \
+ /usr/local/include/folly/container/F14Map.h /usr/include/c++/11/cstddef \
+ /usr/local/include/folly/Portability.h \
+ /usr/local/include/folly/CPortability.h \
+ /usr/local/include/folly/portability/Config.h \
+ /usr/local/include/folly/folly-config.h /usr/include/c++/11/version \
+ /usr/local/include/folly/Range.h \
+ /usr/local/include/folly/hash/SpookyHashV2.h \
+ /usr/local/include/folly/lang/CString.h /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/local/include/folly/lang/Exception.h /usr/include/fmt/format.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -245,11 +258,8 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/include/c++/11/bits/shared_ptr_atomic.h \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/bits/ranges_uninitialized.h \
- /usr/include/c++/11/bits/ranges_algobase.h /usr/include/c++/11/iterator \
- /usr/include/c++/11/bits/stream_iterator.h \
  /usr/include/c++/11/bits/uses_allocator_args.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h /usr/include/fmt/core.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/fmt/core.h \
  /usr/local/include/folly/CppAttributes.h \
  /usr/local/include/folly/Likely.h \
  /usr/local/include/folly/lang/Builtin.h \
@@ -301,9 +311,6 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/local/include/folly/lang/StaticConst.h \
  /usr/local/include/folly/lang/TypeInfo.h \
  /usr/local/include/folly/portability/Constexpr.h \
- /usr/include/c++/11/algorithm /usr/include/c++/11/bits/ranges_algo.h \
- /usr/include/c++/11/bits/ranges_util.h \
- /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/c++/11/ranges /usr/include/c++/11/optional \
  /usr/local/include/folly/CpuId.h \
  /usr/local/include/folly/detail/RangeCommon.h \
@@ -438,8 +445,7 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/local/include/Publication.h \
  /usr/local/include/concurrent/logbuffer/BufferClaim.h \
  /usr/local/include/concurrent/AtomicBuffer.h \
- /usr/local/include/util/Index.h /usr/local/include/util/Exceptions.h \
- /usr/local/include/util/MacroUtil.h /usr/local/include/util/StringUtil.h \
+ /usr/local/include/util/Index.h /usr/local/include/util/StringUtil.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/iostream \
@@ -451,9 +457,6 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
  /usr/include/c++/11/bits/locale_conv.h \
  /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/cstdarg \
- /usr/local/include/concurrent/Atomic64.h \
- /usr/local/include/util/Platform.h \
- /usr/local/include/concurrent/atomic/Atomic64_gcc_x86_64.h \
  /usr/local/include/concurrent/logbuffer/DataFrameHeader.h \
  /usr/local/include/concurrent/logbuffer/HeaderWriter.h \
  /usr/local/include/concurrent/logbuffer/FrameDescriptor.h \
@@ -462,7 +465,6 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
  /usr/include/c++/11/bits/deque.tcc \
  /usr/local/include/concurrent/CountersReader.h \
- /usr/local/include/util/BitUtil.h \
  /usr/local/include/concurrent/status/Position.h \
  /usr/local/include/concurrent/status/ReadablePosition.h \
  /usr/local/include/concurrent/status/StatusIndicatorReader.h \
@@ -522,6 +524,10 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/local/include/concurrent/SleepingIdleStrategy.h \
  /usr/local/include/concurrent/AgentInvoker.h \
  /usr/local/include/Subscription.h /usr/local/include/Publication.h \
+ /home/muhammad-abdullah/rms/include/rms/sharded_queue.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
+ /usr/local/include/concurrent/ringbuffer/OneToOneRingBuffer.h \
+ /home/muhammad-abdullah/rms/include/rms/utils/params.h \
  /home/muhammad-abdullah/rms/include/rms/pretrade_checks.h \
  /home/muhammad-abdullah/rms/include/rms/posttrade_controls.h \
  /home/muhammad-abdullah/rms/include/rms/config_loader.h \

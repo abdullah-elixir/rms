@@ -421,6 +421,30 @@ src/risk_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rms_core.dir/build.make CMakeFiles/rms_core.dir/src/risk_engine.cpp.s
 .PHONY : src/risk_engine.cpp.s
 
+src/sharded_queue.o: src/sharded_queue.cpp.o
+.PHONY : src/sharded_queue.o
+
+# target to build an object file
+src/sharded_queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rms_core.dir/build.make CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o
+.PHONY : src/sharded_queue.cpp.o
+
+src/sharded_queue.i: src/sharded_queue.cpp.i
+.PHONY : src/sharded_queue.i
+
+# target to preprocess a source file
+src/sharded_queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rms_core.dir/build.make CMakeFiles/rms_core.dir/src/sharded_queue.cpp.i
+.PHONY : src/sharded_queue.cpp.i
+
+src/sharded_queue.s: src/sharded_queue.cpp.s
+.PHONY : src/sharded_queue.s
+
+# target to generate assembly for a file
+src/sharded_queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rms_core.dir/build.make CMakeFiles/rms_core.dir/src/sharded_queue.cpp.s
+.PHONY : src/sharded_queue.cpp.s
+
 src/utils/logger.o: src/utils/logger.cpp.o
 .PHONY : src/utils/logger.o
 
@@ -536,6 +560,9 @@ help:
 	@echo "... src/risk_engine.o"
 	@echo "... src/risk_engine.i"
 	@echo "... src/risk_engine.s"
+	@echo "... src/sharded_queue.o"
+	@echo "... src/sharded_queue.i"
+	@echo "... src/sharded_queue.s"
 	@echo "... src/utils/logger.o"
 	@echo "... src/utils/logger.i"
 	@echo "... src/utils/logger.s"

@@ -212,10 +212,24 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rms_core.dir/src/risk_engine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muhammad-abdullah/rms/src/risk_engine.cpp -o CMakeFiles/rms_core.dir/src/risk_engine.cpp.s
 
+CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o: CMakeFiles/rms_core.dir/flags.make
+CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o: /home/muhammad-abdullah/rms/src/sharded_queue.cpp
+CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o: CMakeFiles/rms_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o -MF CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o.d -o CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o -c /home/muhammad-abdullah/rms/src/sharded_queue.cpp
+
+CMakeFiles/rms_core.dir/src/sharded_queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rms_core.dir/src/sharded_queue.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muhammad-abdullah/rms/src/sharded_queue.cpp > CMakeFiles/rms_core.dir/src/sharded_queue.cpp.i
+
+CMakeFiles/rms_core.dir/src/sharded_queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rms_core.dir/src/sharded_queue.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muhammad-abdullah/rms/src/sharded_queue.cpp -o CMakeFiles/rms_core.dir/src/sharded_queue.cpp.s
+
 CMakeFiles/rms_core.dir/src/utils/logger.cpp.o: CMakeFiles/rms_core.dir/flags.make
 CMakeFiles/rms_core.dir/src/utils/logger.cpp.o: /home/muhammad-abdullah/rms/src/utils/logger.cpp
 CMakeFiles/rms_core.dir/src/utils/logger.cpp.o: CMakeFiles/rms_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/rms_core.dir/src/utils/logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/rms_core.dir/src/utils/logger.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rms_core.dir/src/utils/logger.cpp.o -MF CMakeFiles/rms_core.dir/src/utils/logger.cpp.o.d -o CMakeFiles/rms_core.dir/src/utils/logger.cpp.o -c /home/muhammad-abdullah/rms/src/utils/logger.cpp
 
 CMakeFiles/rms_core.dir/src/utils/logger.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/rms_core.dir/src/utils/logger.cpp.s: cmake_force
 CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o: CMakeFiles/rms_core.dir/flags.make
 CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o: /home/muhammad-abdullah/rms/src/utils/time_utils.cpp
 CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o: CMakeFiles/rms_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o -MF CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o.d -o CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o -c /home/muhammad-abdullah/rms/src/utils/time_utils.cpp
 
 CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.s: cmake_force
 CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: CMakeFiles/rms_core.dir/flags.make
 CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vcm_module.cpp
 CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: CMakeFiles/rms_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/rms_core.dir/src/vcm_module.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/rms_core.dir/src/vcm_module.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rms_core.dir/src/vcm_module.cpp.o -MF CMakeFiles/rms_core.dir/src/vcm_module.cpp.o.d -o CMakeFiles/rms_core.dir/src/vcm_module.cpp.o -c /home/muhammad-abdullah/rms/src/vcm_module.cpp
 
 CMakeFiles/rms_core.dir/src/vcm_module.cpp.i: cmake_force
@@ -266,6 +280,7 @@ rms_core_OBJECTS = \
 "CMakeFiles/rms_core.dir/src/pretrade_checks.cpp.o" \
 "CMakeFiles/rms_core.dir/src/replication.cpp.o" \
 "CMakeFiles/rms_core.dir/src/risk_engine.cpp.o" \
+"CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o" \
 "CMakeFiles/rms_core.dir/src/utils/logger.cpp.o" \
 "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o" \
 "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o"
@@ -283,6 +298,7 @@ rms_core: CMakeFiles/rms_core.dir/src/posttrade_controls.cpp.o
 rms_core: CMakeFiles/rms_core.dir/src/pretrade_checks.cpp.o
 rms_core: CMakeFiles/rms_core.dir/src/replication.cpp.o
 rms_core: CMakeFiles/rms_core.dir/src/risk_engine.cpp.o
+rms_core: CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o
 rms_core: CMakeFiles/rms_core.dir/src/utils/logger.cpp.o
 rms_core: CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o
 rms_core: CMakeFiles/rms_core.dir/src/vcm_module.cpp.o
@@ -291,7 +307,7 @@ rms_core: /usr/lib/x86_64-linux-gnu/libyaml-cpp.a
 rms_core: /usr/lib/x86_64-linux-gnu/libgtest_main.a
 rms_core: /usr/lib/x86_64-linux-gnu/libgtest.a
 rms_core: CMakeFiles/rms_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable rms_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable rms_core"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rms_core.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
