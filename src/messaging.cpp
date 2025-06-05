@@ -20,10 +20,7 @@ Messaging::~Messaging() {
     shutdown();
 }
 
-bool Messaging::initialize(OrderCallback ocb, TradeCallback tcb) {
-    orderCb_ = std::move(ocb);
-    tradeCb_ = std::move(tcb);
-
+bool Messaging::initialize() {
     try {
         aeron::Context context;
         aeron_ = aeron::Aeron::connect(context);
@@ -70,29 +67,13 @@ aeron::fragment_handler_t Messaging::fragHandler() {
         if (length < sizeof(std::uint8_t)) {
             return; // too small to read any header
         }
-        std::cout<<"received aeron::Fragment buffer: "<<buffer.buffer()<<std::endl;
-        // First byte indicates message type: 1 = Order, 2 = TradeExecution
-        std::uint8_t msgType = buffer.getUInt8(offset);
-        std::cout << msgType<< ","<<length <<","<< 1 + sizeof(Order)<< std::endl;
-        if (true) {
-            // Deserialize Order
-            Order order;
-            std::memcpy(&order, buffer.buffer() + offset + 1, sizeof(Order));
-            if (orderCb_) {
-                orderCb_(order);
-            }
-        }
-        else if (msgType == 2 && length >= (1 + sizeof(TradeExecution))) {
-            // Deserialize TradeExecution
-            TradeExecution trade;
-            std::memcpy(&trade, buffer.buffer() + offset + 1, sizeof(TradeExecution));
-            if (tradeCb_) {
-                tradeCb_(trade);
-            }
-        }
-        else {
-            utils::logError("[Messaging] Unknown or malformed message received");
-        }
+        std::cout<<"-----HEADER-----"<<std::endl;
+        std::string recvdbuf((char*)buffer.buffer(), length);
+        int32_t orderId = buffer.getInt64(offset + sizeof(std::uint8_t));
+        int64_t shardId = orderId % NUM_SHARDS;
+        std::cout << "order id: " << orderId << std::endl;
+        utils::logInfo("got shardId: " + std::to_string(shardId));
+        sharded_queue[shardId].enqueue(buffer, offset, length);
     };
 }
 
@@ -106,7 +87,7 @@ void Messaging::listenerLoop() {
     aeron::SleepingIdleStrategy sleepStrategy(SLEEP_IDLE_MS);
     while (running_) {
         // Poll up to 10 fragments per iteration
-        std::int32_t fragmentsRead = subscription_->poll(handler, 10);
+        std::int32_t fragmentsRead = subscription_->poll(handler, MAX_FRAGMENT_BATCH_SIZE);
         sleepStrategy.idle(fragmentsRead);
     }
     utils::logInfo("[Messaging] Listener thread exiting");
@@ -127,6 +108,11 @@ bool Messaging::sendTradeExecution(const TradeExecution &trade) {
     }
     return true;
 }
+
+std::array<ShardedQueue, NUM_SHARDS>& Messaging::getQueue() {
+        return  sharded_queue;
+}
+
 
 void Messaging::shutdown() {
     if (!running_) return;

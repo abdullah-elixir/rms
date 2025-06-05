@@ -17,10 +17,7 @@ bool RiskEngine::initialize(const std::string &config_path) {
         return false;
     }
     // Initialize Messaging with callbacks bound to this instance
-    bool ok = messaging_.initialize(
-        [this](const Order &order) { this->onOrderReceived(order); },
-        [this](const TradeExecution &trade) { this->onTradeReceived(trade); }
-    );
+    bool ok = messaging_.initialize();
     if (!ok) {
         std::cerr << "[RiskEngine] Failed to initialize Messaging\n";
         return false;
@@ -59,17 +56,42 @@ void RiskEngine::stop() {
 }
 
 void RiskEngine::runShard(int shard_id) {
-    utils::logInfo("[RiskEngine] runShard started for shard " + std::to_string(shard_id));
+    std::cout << "[RiskEngine]|"<<shard_id<< " Running shard: " << shard_id << std::endl;
+    aeron::concurrent::BackoffIdleStrategy idle_strategy(100, 1000);
+    auto& queue = messaging_.getQueue()[shard_id];
+    bool processed = false;
     while (running_) {
-        // In a full implementation, you would process any queued orders/trades
-        // or perform periodic risk calculations here. For now, we sleep.
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        for (int i = 0; i < MAX_FRAGMENT_BATCH_SIZE; ++i) {
+            auto msg = queue.dequeue();
+            if (msg.has_value()) {
+                processed = true;
+                std::cout<<"RiskEngine|"<<shard_id<<" dequeing completed on shard: "<<shard_id<<std::endl;
+                auto variant = msg.value();
+                if (std::holds_alternative<Order>(variant)) {
+                    onOrderReceived(std::get<Order>(variant));
+                }
+                else if (std::holds_alternative<TradeExecution>(variant)) {
+                    onTradeReceived(std::get<TradeExecution>(variant));
+                }
+                else {
+                    std::cout<<"[RiskEngine]|"<<shard_id<< " Unknown or malformed message received"<<std::endl;
+                }
+            }
+            else
+                break;
+        }
+        if (!processed) {
+            idle_strategy.idle();
+            //std::this_thread::sleep_for(std::chrono::microseconds(10));
+            //std::this_thread::yield(); // or sleep_for(100us) for cooler CPU
+        }
+        processed = false;
     }
-    utils::logInfo("[RiskEngine] runShard exiting for shard " + std::to_string(shard_id));
+    std::cout<<"[RiskEngine]|" << shard_id<<" runShard exiting for shard "<<std::to_string(shard_id)<<std::endl;
 }
 
 void RiskEngine::onOrderReceived(const Order &order) {
-    utils::logInfo("[RiskEngine] Received order received");
+    utils::logInfo("[RiskEngine] Received order");
     // Determine which shard this order belongs to
     int shard = static_cast<int>(order.account_id % NUM_SHARDS);
 
@@ -92,6 +114,7 @@ void RiskEngine::onOrderReceived(const Order &order) {
     // If passed, send the order to the matching engine (not implemented here).
     utils::logInfo("[RiskEngine] Order accepted: account " +
                    std::to_string(order.account_id) + ", qty " + std::to_string(order.quantity));
+    std::cout<<"-----FOOTER-----"<<std::endl;
 }
 
 void RiskEngine::onTradeReceived(const TradeExecution &trade) {

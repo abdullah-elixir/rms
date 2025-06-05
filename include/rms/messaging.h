@@ -4,6 +4,7 @@
 #include <atomic>
 #include <functional>
 #include <memory>
+#include<array>
 #include <thread>
 #include <Aeron.h>
 #include <Context.h>
@@ -11,6 +12,7 @@
 #include <Publication.h>
 #include <concurrent/AtomicBuffer.h>
 #include "data_types.h"      // For Order, TradeExecution, etc.
+#include "sharded_queue.h"
 
 namespace rms {
 
@@ -24,7 +26,7 @@ namespace rms {
 
         /// Initialize Aeron, set up Publication & Subscription, and register callbacks.
         /// Returns false if Aeron setup fails.
-        bool initialize(OrderCallback ocb, TradeCallback tcb);
+        bool initialize();
 
         /// Shutdown Aeron and stop listener thread.
         void shutdown();
@@ -34,6 +36,9 @@ namespace rms {
 
         ///fragment handler
         aeron::fragment_handler_t fragHandler();
+
+        ///getqueue
+        std::array<ShardedQueue, NUM_SHARDS>& getQueue();
 
     private:
         /// Listener loop that polls Aeron Subscription.
@@ -48,6 +53,8 @@ namespace rms {
         std::shared_ptr<aeron::Aeron> aeron_;
         std::shared_ptr<aeron::Subscription> subscription_;
         std::shared_ptr<aeron::Publication> publication_;
+
+        std::array<ShardedQueue, NUM_SHARDS> sharded_queue;
     };
 
 }  // namespace rms

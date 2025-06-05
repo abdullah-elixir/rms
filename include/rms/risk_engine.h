@@ -3,6 +3,7 @@
 
 #include <thread>
 #include <vector>
+#include <concurrent/BackOffIdleStrategy.h>
 #include "data_types.h"
 #include "messaging.h"
 #include "pretrade_checks.h"

@@ -12,7 +12,12 @@ file(GLOB_RECURSE RMS_SRC
     src/*.cpp
 )
 
-add_executable(rms_core main.cpp ${RMS_SRC})
+add_executable(rms_core main.cpp ${RMS_SRC}
+        include/rms/aeronWrapper.h
+        include/rms/sharded_queue.h
+        src/sharded_queue.cpp
+        include/rms/utils/params.h
+)
 # Required so folly can locate its dependencies
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/usr/share/cmake-4.0/Modules")
 find_package(yaml-cpp REQUIRED)

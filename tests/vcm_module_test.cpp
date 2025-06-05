@@ -7,6 +7,6 @@
 
 TEST(VCMModuleTest, SpreadCheck) {
     rms::VCMModule vcm;
-    Order o{0,0,10,50.0};
+    Order o{0,0,10,50,50.0};
     EXPECT_TRUE(vcm.checkSpread(o));
 }
