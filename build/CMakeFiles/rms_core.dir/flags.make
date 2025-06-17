@@ -6,5 +6,5 @@ CXX_DEFINES = -DYAML_CPP_STATIC_DEFINE
 
 CXX_INCLUDES = -I/home/muhammad-abdullah/rms/include/rms
 
-CXX_FLAGS = -std=gnu++20 -DGTEST_HAS_PTHREAD=1
+CXX_FLAGS = -g -std=gnu++20 -DGTEST_HAS_PTHREAD=1
 

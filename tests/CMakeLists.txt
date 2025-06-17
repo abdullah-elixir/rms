@@ -17,7 +17,7 @@ add_executable(posttrade_controls_test posttrade_controls_test.cpp ../src/posttr
 
 target_link_libraries(pretrade_checks_test GTest::GTest GTest::Main pthread yaml-cpp folly fmt::fmt glog::glog)
 target_link_libraries(vcm_module_test GTest::GTest GTest::Main pthread yaml-cpp folly fmt::fmt glog::glog)
-target_link_libraries(posttrade_controls_test GTest::GTest GTest::Main pthread yaml-cpp)
+target_link_libraries(posttrade_controls_test GTest::GTest GTest::Main pthread yaml-cpp folly fmt::fmt glog::glog)
 
 # Integration test stub
 add_executable(integration_test integration_test.cpp ../src/pretrade_checks.cpp ../src/vcm_module.cpp ../src/posttrade_controls.cpp ../src/data_types.cpp)

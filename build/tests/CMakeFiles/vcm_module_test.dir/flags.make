@@ -6,5 +6,5 @@ CXX_DEFINES = -DFMT_LOCALE -DFMT_SHARED -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DE
 
 CXX_INCLUDES = -I/home/muhammad-abdullah/rms/include/rms -I/home/muhammad-abdullah/rms/tests/../include
 
-CXX_FLAGS = -std=gnu++20 -DGTEST_HAS_PTHREAD=1
+CXX_FLAGS = -g -std=gnu++20 -DGTEST_HAS_PTHREAD=1
 

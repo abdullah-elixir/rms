@@ -525,7 +525,61 @@ CMakeFiles/rms_core.dir/src/messaging.cpp.o: \
  /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
  /usr/local/include/concurrent/ringbuffer/OneToOneRingBuffer.h \
  /home/muhammad-abdullah/rms/include/rms/utils/params.h \
- /home/muhammad-abdullah/rms/include/rms/utils/logger.h \
+ /home/muhammad-abdullah/rms/include/rms/logger.h \
+ /usr/include/spdlog/spdlog.h /usr/include/spdlog/common.h \
+ /usr/include/spdlog/tweakme.h /usr/include/spdlog/details/null_mutex.h \
+ /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
+ /usr/include/spdlog/common-inl.h /usr/include/spdlog/details/registry.h \
+ /usr/include/spdlog/details/registry-inl.h \
+ /usr/include/spdlog/details/periodic_worker.h \
+ /usr/include/c++/11/condition_variable \
+ /usr/include/spdlog/details/periodic_worker-inl.h \
+ /usr/include/spdlog/logger.h /usr/include/spdlog/details/log_msg.h \
+ /usr/include/spdlog/details/log_msg-inl.h \
+ /usr/include/spdlog/details/os.h /usr/include/spdlog/details/os-inl.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+ /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h \
+ /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
+ /usr/include/fcntl.h /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+ /usr/include/linux/falloc.h /usr/include/spdlog/details/backtracer.h \
+ /usr/include/spdlog/details/log_msg_buffer.h \
+ /usr/include/spdlog/details/log_msg_buffer-inl.h \
+ /usr/include/spdlog/details/circular_q.h \
+ /usr/include/spdlog/details/backtracer-inl.h \
+ /usr/include/spdlog/logger-inl.h /usr/include/spdlog/sinks/sink.h \
+ /usr/include/spdlog/formatter.h /usr/include/spdlog/sinks/sink-inl.h \
+ /usr/include/spdlog/pattern_formatter.h \
+ /usr/include/spdlog/pattern_formatter-inl.h \
+ /usr/include/spdlog/details/fmt_helper.h \
+ /usr/include/spdlog/sinks/ansicolor_sink.h \
+ /usr/include/spdlog/details/console_globals.h \
+ /usr/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /usr/include/spdlog/version.h \
+ /usr/include/spdlog/details/synchronous_factory.h \
+ /usr/include/spdlog/spdlog-inl.h \
+ /usr/include/spdlog/sinks/rotating_file_sink.h \
+ /usr/include/spdlog/sinks/base_sink.h \
+ /usr/include/spdlog/sinks/base_sink-inl.h \
+ /usr/include/spdlog/details/file_helper.h \
+ /usr/include/spdlog/details/file_helper-inl.h \
+ /usr/include/spdlog/sinks/rotating_file_sink-inl.h \
+ /usr/include/spdlog/sinks/stdout_color_sinks.h \
+ /usr/include/spdlog/sinks/stdout_color_sinks-inl.h \
+ /home/muhammad-abdullah/rms/include/rms/loggerwrapper.h \
  /usr/local/include/FragmentAssembler.h \
  /usr/local/include/BufferBuilder.h /usr/local/include/Aeron.h \
  /usr/local/include/protocol/DataHeaderFlyweight.h \

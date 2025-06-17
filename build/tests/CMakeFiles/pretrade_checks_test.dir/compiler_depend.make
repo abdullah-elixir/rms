@@ -574,6 +574,7 @@ tests/CMakeFiles/pretrade_checks_test.dir/__/src/pretrade_checks.cpp.o: /home/mu
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/iterator_concepts.h \
   /usr/include/c++/11/bits/locale_classes.h \
   /usr/include/c++/11/bits/locale_classes.tcc \
@@ -666,6 +667,8 @@ tests/CMakeFiles/pretrade_checks_test.dir/__/src/pretrade_checks.cpp.o: /home/mu
   /usr/include/c++/11/initializer_list \
   /usr/include/c++/11/ios \
   /usr/include/c++/11/iosfwd \
+  /usr/include/c++/11/iostream \
+  /usr/include/c++/11/istream \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/limits \
   /usr/include/c++/11/memory \
@@ -1645,8 +1648,6 @@ tests/CMakeFiles/pretrade_checks_test.dir/pretrade_checks_test.cpp.o: /home/muha
 
 /usr/include/c++/11/map:
 
-/usr/include/c++/11/istream:
-
 /usr/include/c++/11/bits/stl_tree.h:
 
 /usr/include/c++/11/bits/stl_set.h:
@@ -1659,8 +1660,6 @@ tests/CMakeFiles/pretrade_checks_test.dir/pretrade_checks_test.cpp.o: /home/muha
 
 /usr/include/c++/11/bits/locale_conv.h:
 
-/usr/include/c++/11/bits/istream.tcc:
-
 /usr/include/c++/11/bits/codecvt.h:
 
 /usr/include/x86_64-linux-gnu/bits/signum-generic.h:
@@ -1670,6 +1669,10 @@ tests/CMakeFiles/pretrade_checks_test.dir/pretrade_checks_test.cpp.o: /home/muha
 /usr/include/asm-generic/bitsperlong.h:
 
 /home/muhammad-abdullah/rms/tests/pretrade_checks_test.cpp:
+
+/usr/include/c++/11/istream:
+
+/usr/include/c++/11/bits/istream.tcc:
 
 /home/muhammad-abdullah/rms/include/rms/pretrade_checks.h:
 

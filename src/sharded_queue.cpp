@@ -3,8 +3,8 @@
 //
 #include<concurrent/BackOffIdleStrategy.h>
 #include "sharded_queue.h"
-#include "utils/logger.h"
 #include "utils/time_utils.h"
+#include "logger.h"
 
 ShardedQueue::ShardedQueue() : _buffer(buffer, MAX_RING_BUFFER_SIZE + aeron::concurrent::ringbuffer::RingBufferDescriptor::TRAILER_LENGTH), _ring_buffer(_buffer) {}
 
@@ -21,7 +21,7 @@ void ShardedQueue::enqueue(aeron::concurrent::AtomicBuffer buffer, int32_t offse
             return;
         }
         if (std::chrono::high_resolution_clock::now() - start >= std::chrono::microseconds(50)) {
-            rms::utils::logError("retry timeout");
+            std::cerr << "retry timeout" << std::endl;
             return;
         }
         idleStrategy.idle();
@@ -45,7 +45,7 @@ std::optional<std::variant<Order, TradeExecution>> ShardedQueue::dequeue() {
             result.emplace(trade);
         }
         else {
-            rms::utils::logError("Unexpected msgType");
+            std::cerr << "Unexpected msgType" << std::endl;
         }
     });
     return result;

@@ -19,7 +19,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/muhammad-abdullah/rms/src/replication.cpp" "CMakeFiles/rms_core.dir/src/replication.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/replication.cpp.o.d"
   "/home/muhammad-abdullah/rms/src/risk_engine.cpp" "CMakeFiles/rms_core.dir/src/risk_engine.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/risk_engine.cpp.o.d"
   "/home/muhammad-abdullah/rms/src/sharded_queue.cpp" "CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o.d"
-  "/home/muhammad-abdullah/rms/src/utils/logger.cpp" "CMakeFiles/rms_core.dir/src/utils/logger.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/utils/logger.cpp.o.d"
   "/home/muhammad-abdullah/rms/src/utils/time_utils.cpp" "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o.d"
   "/home/muhammad-abdullah/rms/src/vcm_module.cpp" "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o" "gcc" "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o.d"
   )

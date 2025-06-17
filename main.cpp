@@ -11,7 +11,7 @@ void signalHandler(int signum) {
 }
 
 int main(int argc, char **argv) {
-    std::string config_path = "../etc/risk_config.yaml";
+    std::string config_path = "../config/risk_engine.yaml";
     rms::RiskEngine engine;
     g_engine = &engine;
     if (!engine.initialize(config_path)) return -1;

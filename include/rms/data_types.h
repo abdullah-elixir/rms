@@ -37,13 +37,6 @@ struct Position {
     double  peak_equity = 0.0;
 } __attribute__((aligned(64)));
 
-using InstrumentLimitsShard = std::array<InstrumentLimits, NUM_INSTRUMENTS>;
-using AccountLimitsShard = std::array<AccountLimits, ACCOUNTS_PER_SHARD>;
-
-extern InstrumentLimitsShard instrument_limits_shards[NUM_SHARDS];
-extern AccountLimitsShard account_limits_shards[NUM_SHARDS];
-extern std::array<folly::F14FastMap<uint32_t, Position>, NUM_SHARDS> position_store;
-
 struct Order {
     uint64_t order_id;
     uint32_t account_id;
@@ -63,4 +56,11 @@ struct TradeExecution {
     char     symbol[16];
     bool     is_buy;
     uint64_t trade_id;
-};
+}__attribute__((aligned(64)));
+
+using InstrumentLimitsShard = std::array<InstrumentLimits, NUM_INSTRUMENTS>;
+using AccountLimitsShard = std::array<AccountLimits, ACCOUNTS_PER_SHARD>;
+
+extern InstrumentLimitsShard instrument_limits_shards[NUM_SHARDS];
+extern AccountLimitsShard account_limits_shards[NUM_SHARDS];
+extern std::array<folly::F14FastMap<uint32_t, Position>, NUM_SHARDS> position_store;

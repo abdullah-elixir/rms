@@ -21,8 +21,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/rms_core.dir/src/risk_engine.cpp.o.d"
   "CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o"
   "CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o.d"
-  "CMakeFiles/rms_core.dir/src/utils/logger.cpp.o"
-  "CMakeFiles/rms_core.dir/src/utils/logger.cpp.o.d"
   "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o"
   "CMakeFiles/rms_core.dir/src/utils/time_utils.cpp.o.d"
   "CMakeFiles/rms_core.dir/src/vcm_module.cpp.o"

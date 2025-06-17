@@ -1,6 +1,5 @@
 // File: src/messaging.cpp
 #include "messaging.h"
-#include "utils/logger.h"
 #include <iostream>
 #include <cstring>
 #include <FragmentAssembler.h>
@@ -14,14 +13,16 @@ static constexpr const char *CHANNEL_IPC  = "aeron:ipc"; // where orders arrive
 static constexpr std::int32_t STREAM_ID = 1001;
 static constexpr std::chrono::duration<long, std::milli> SLEEP_IDLE_MS(1);
 
-Messaging::Messaging() = default;
+Messaging::Messaging(){
+};
 
 Messaging::~Messaging() {
     shutdown();
 }
 
-bool Messaging::initialize() {
+bool Messaging::initialize(std::unique_ptr<LoggerWrapper>& logWrapper_) {
     try {
+        logWrapper = logWrapper_.get();
         aeron::Context context;
         aeron_ = aeron::Aeron::connect(context);
 
@@ -35,7 +36,8 @@ bool Messaging::initialize() {
             std::this_thread::yield();
             subscription_ = aeron_->findSubscription(id);
         }
-        utils::logInfo("[Messaging] Subscribed. Sub Id: " + std::to_string(id));
+        logWrapper->debug(4, "[Messaging] Subscribed. Sub Id: {}", id);
+        //utils::logInfo("[Messaging] Subscribed. Sub Id: " + std::to_string(id));
         // // Create a publication for outgoing messages (trade confirmations)
         // id = aeron_->addPublication(CHANNEL_OUT, STREAM_ID);
         //
@@ -49,13 +51,13 @@ bool Messaging::initialize() {
 
     }
     catch (const std::exception &ex) {
-        std::cerr << "[Messaging] Aeron initialization failed: " << ex.what() << std::endl;
+        logWrapper->error(4, "[Messaging] Aeron initialization failed: {}", ex.what());
         return false;
     }
 
     running_ = true;
     listenerThread_ = std::thread(&Messaging::listenerLoop, this);
-    utils::logInfo("[Messaging] Aeron initialized and listener thread started");
+    logWrapper->debug(4, "[Messaging] Aeron initialized and listener thread started");
     return true;
 }
 
@@ -67,19 +69,16 @@ aeron::fragment_handler_t Messaging::fragHandler() {
         if (length < sizeof(std::uint8_t)) {
             return; // too small to read any header
         }
-        std::cout<<"-----HEADER-----"<<std::endl;
-        std::string recvdbuf((char*)buffer.buffer(), length);
-        int32_t orderId = buffer.getInt64(offset + sizeof(std::uint8_t));
-        int64_t shardId = orderId % NUM_SHARDS;
-        std::cout << "order id: " << orderId << std::endl;
-        utils::logInfo("got shardId: " + std::to_string(shardId));
+        logWrapper->debug(4, "-----HEADER-----");
+        int64_t orderId = buffer.getInt64(offset + sizeof(std::uint8_t));
+        int32_t shardId = orderId % NUM_SHARDS;
         sharded_queue[shardId].enqueue(buffer, offset, length);
     };
 }
 
 
 void Messaging::listenerLoop() {
-    utils::logInfo("[Messaging] listenerLoop started");
+    logWrapper->debug(4, "[Messaging] listenerLoop started");
     aeron::FragmentAssembler fragmentAssembler(fragHandler());
     aeron::fragment_handler_t handler = fragmentAssembler.handler();
     aeron::SleepingIdleStrategy sleepStrategy(SLEEP_IDLE_MS);
@@ -88,7 +87,7 @@ void Messaging::listenerLoop() {
         std::int32_t fragmentsRead = subscription_->poll(handler, MAX_FRAGMENT_BATCH_SIZE);
         sleepStrategy.idle(fragmentsRead);
     }
-    utils::logInfo("[Messaging] Listener thread exiting");
+    logWrapper->debug(4, "[Messaging] Listener thread exiting");
 }
 
 bool Messaging::sendTradeExecution(const TradeExecution &trade) {
@@ -101,7 +100,7 @@ bool Messaging::sendTradeExecution(const TradeExecution &trade) {
     aeron::AtomicBuffer srcBuffer(bufferData, sizeof(bufferData));
     std::int64_t result = publication_->offer(srcBuffer, 0, sizeof(bufferData));
     if (result < 0) {
-        utils::logError("[Messaging] Failed to send trade execution; offer returned " + std::to_string(result));
+        logWrapper->error(4, "[Messaging] Failed to send trade execution; offer returned {}", result);
         return false;
     }
     return true;
@@ -121,5 +120,5 @@ void Messaging::shutdown() {
     publication_.reset();
     subscription_.reset();
     aeron_.reset();
-    utils::logInfo("[Messaging] Shutdown complete");
+    logWrapper->debug(4, "[Messaging] Shutdown complete");
 }

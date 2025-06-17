@@ -216,17 +216,25 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/local/include/util/BitUtil.h /usr/include/c++/11/cassert \
  /usr/include/assert.h /usr/local/include/util/Exceptions.h \
  /usr/local/include/util/MacroUtil.h \
- /home/muhammad-abdullah/rms/include/rms/data_types.h \
- /usr/local/include/folly/container/F14Map.h /usr/include/c++/11/cstddef \
- /usr/local/include/folly/Portability.h \
- /usr/local/include/folly/CPortability.h \
- /usr/local/include/folly/portability/Config.h \
- /usr/local/include/folly/folly-config.h /usr/include/c++/11/version \
- /usr/local/include/folly/Range.h \
- /usr/local/include/folly/hash/SpookyHashV2.h \
- /usr/local/include/folly/lang/CString.h /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h \
- /usr/local/include/folly/lang/Exception.h /usr/include/fmt/format.h \
+ /home/muhammad-abdullah/rms/include/rms/logger.h \
+ /usr/include/c++/11/iostream /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/spdlog/spdlog.h \
+ /usr/include/spdlog/common.h /usr/include/spdlog/tweakme.h \
+ /usr/include/spdlog/details/null_mutex.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/bits/ranges_uninitialized.h \
+ /usr/include/c++/11/bits/uses_allocator_args.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h \
+ /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
+ /usr/include/c++/11/cstddef /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h /usr/include/fmt/format.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -248,18 +256,69 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/ext/concurrence.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/bits/ranges_uninitialized.h \
- /usr/include/c++/11/bits/uses_allocator_args.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/fmt/core.h \
+ /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/fmt/core.h \
+ /usr/include/spdlog/common-inl.h /usr/include/spdlog/details/registry.h \
+ /usr/include/c++/11/mutex /usr/include/c++/11/bits/unique_lock.h \
+ /usr/include/spdlog/details/registry-inl.h \
+ /usr/include/spdlog/details/periodic_worker.h \
+ /usr/include/c++/11/condition_variable \
+ /usr/include/spdlog/details/periodic_worker-inl.h \
+ /usr/include/spdlog/logger.h /usr/include/spdlog/details/log_msg.h \
+ /usr/include/spdlog/details/log_msg-inl.h \
+ /usr/include/spdlog/details/os.h /usr/include/spdlog/details/os-inl.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+ /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
+ /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
+ /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h \
+ /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
+ /usr/include/fcntl.h /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+ /usr/include/linux/falloc.h /usr/include/spdlog/details/backtracer.h \
+ /usr/include/spdlog/details/log_msg_buffer.h \
+ /usr/include/spdlog/details/log_msg_buffer-inl.h \
+ /usr/include/spdlog/details/circular_q.h \
+ /usr/include/spdlog/details/backtracer-inl.h \
+ /usr/include/spdlog/logger-inl.h /usr/include/spdlog/sinks/sink.h \
+ /usr/include/spdlog/formatter.h /usr/include/spdlog/sinks/sink-inl.h \
+ /usr/include/spdlog/pattern_formatter.h \
+ /usr/include/spdlog/pattern_formatter-inl.h \
+ /usr/include/spdlog/details/fmt_helper.h \
+ /usr/include/spdlog/sinks/ansicolor_sink.h \
+ /usr/include/spdlog/details/console_globals.h \
+ /usr/include/spdlog/sinks/ansicolor_sink-inl.h \
+ /usr/include/spdlog/version.h \
+ /usr/include/spdlog/details/synchronous_factory.h \
+ /usr/include/spdlog/spdlog-inl.h \
+ /usr/include/spdlog/sinks/rotating_file_sink.h \
+ /usr/include/spdlog/sinks/base_sink.h \
+ /usr/include/spdlog/sinks/base_sink-inl.h \
+ /usr/include/spdlog/details/file_helper.h \
+ /usr/include/spdlog/details/file_helper-inl.h \
+ /usr/include/spdlog/sinks/rotating_file_sink-inl.h \
+ /usr/include/spdlog/sinks/stdout_color_sinks.h \
+ /usr/include/spdlog/sinks/stdout_color_sinks-inl.h \
+ /home/muhammad-abdullah/rms/include/rms/loggerwrapper.h \
+ /home/muhammad-abdullah/rms/include/rms/data_types.h \
+ /usr/local/include/folly/container/F14Map.h \
+ /usr/local/include/folly/Portability.h \
+ /usr/local/include/folly/CPortability.h \
+ /usr/local/include/folly/portability/Config.h \
+ /usr/local/include/folly/folly-config.h /usr/include/c++/11/version \
+ /usr/local/include/folly/Range.h \
+ /usr/local/include/folly/hash/SpookyHashV2.h \
+ /usr/local/include/folly/lang/CString.h \
+ /usr/local/include/folly/lang/Exception.h \
  /usr/local/include/folly/CppAttributes.h \
  /usr/local/include/folly/Likely.h \
  /usr/local/include/folly/lang/Builtin.h \
@@ -440,15 +499,12 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /usr/include/c++/11/coroutine \
  /home/muhammad-abdullah/rms/include/rms/messaging.h \
  /usr/local/include/Aeron.h /usr/local/include/ClientConductor.h \
- /usr/include/c++/11/mutex /usr/include/c++/11/bits/unique_lock.h \
  /usr/local/include/util/LangUtil.h /usr/local/include/util/ScopeUtils.h \
  /usr/local/include/Publication.h \
  /usr/local/include/concurrent/logbuffer/BufferClaim.h \
  /usr/local/include/concurrent/AtomicBuffer.h \
  /usr/local/include/util/Index.h /usr/local/include/util/StringUtil.h \
- /usr/include/c++/11/sstream /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc \
- /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/iostream \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/c++/11/iomanip /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
@@ -530,5 +586,4 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: \
  /home/muhammad-abdullah/rms/include/rms/utils/params.h \
  /home/muhammad-abdullah/rms/include/rms/pretrade_checks.h \
  /home/muhammad-abdullah/rms/include/rms/posttrade_controls.h \
- /home/muhammad-abdullah/rms/include/rms/config_loader.h \
- /home/muhammad-abdullah/rms/include/rms/utils/logger.h
+ /home/muhammad-abdullah/rms/include/rms/config_loader.h

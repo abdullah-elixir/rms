@@ -13,6 +13,8 @@
 #include <concurrent/AtomicBuffer.h>
 #include "data_types.h"      // For Order, TradeExecution, etc.
 #include "sharded_queue.h"
+#include "logger.h"
+#include "loggerwrapper.h"
 
 namespace rms {
 
@@ -26,7 +28,7 @@ namespace rms {
 
         /// Initialize Aeron, set up Publication & Subscription, and register callbacks.
         /// Returns false if Aeron setup fails.
-        bool initialize();
+        bool initialize(std::unique_ptr<LoggerWrapper>&);
 
         /// Shutdown Aeron and stop listener thread.
         void shutdown();
@@ -47,6 +49,7 @@ namespace rms {
         std::atomic_bool running_{false};
         std::thread listenerThread_;
 
+
         OrderCallback orderCb_;
         TradeCallback tradeCb_;
 
@@ -55,6 +58,9 @@ namespace rms {
         std::shared_ptr<aeron::Publication> publication_;
 
         std::array<ShardedQueue, NUM_SHARDS> sharded_queue;
+
+        //log wrapper
+        LoggerWrapper* logWrapper;
     };
 
 }  // namespace rms

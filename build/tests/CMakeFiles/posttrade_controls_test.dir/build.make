@@ -127,9 +127,13 @@ tests/posttrade_controls_test: tests/CMakeFiles/posttrade_controls_test.dir/post
 tests/posttrade_controls_test: tests/CMakeFiles/posttrade_controls_test.dir/__/src/posttrade_controls.cpp.o
 tests/posttrade_controls_test: tests/CMakeFiles/posttrade_controls_test.dir/__/src/data_types.cpp.o
 tests/posttrade_controls_test: tests/CMakeFiles/posttrade_controls_test.dir/build.make
+tests/posttrade_controls_test: /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1
+tests/posttrade_controls_test: /usr/lib/x86_64-linux-gnu/libglog.so.0.4.0
 tests/posttrade_controls_test: /usr/lib/x86_64-linux-gnu/libgtest_main.a
 tests/posttrade_controls_test: /usr/lib/x86_64-linux-gnu/libgtest.a
 tests/posttrade_controls_test: /usr/lib/x86_64-linux-gnu/libyaml-cpp.a
+tests/posttrade_controls_test: /usr/lib/x86_64-linux-gnu/libunwind.so
+tests/posttrade_controls_test: /usr/lib/x86_64-linux-gnu/libgflags.so.2.2.2
 tests/posttrade_controls_test: tests/CMakeFiles/posttrade_controls_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/muhammad-abdullah/rms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable posttrade_controls_test"
 	cd /home/muhammad-abdullah/rms/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/posttrade_controls_test.dir/link.txt --verbose=$(VERBOSE)
