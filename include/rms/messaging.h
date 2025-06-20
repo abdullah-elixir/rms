@@ -39,7 +39,7 @@ namespace rms {
         ///fragment handler
         aeron::fragment_handler_t fragHandler();
 
-        ///getqueue
+        ///get queue
         std::array<ShardedQueue, NUM_SHARDS>& getQueue();
 
     private:
@@ -61,6 +61,8 @@ namespace rms {
 
         //log wrapper
         LoggerWrapper* logWrapper;
+
+        uint32_t _shard_counter = 3;
     };
 
 }  // namespace rms

@@ -5310,6 +5310,9 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o
 
 CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o
  /home/muhammad-abdullah/rms/src/sharded_queue.cpp
+ /home/muhammad-abdullah/rms/include/rms/baseline/MessageHeader.h
+ /home/muhammad-abdullah/rms/include/rms/baseline/Order.h
+ /home/muhammad-abdullah/rms/include/rms/baseline/VarStringEncoding.h
  /home/muhammad-abdullah/rms/include/rms/data_types.h
  /home/muhammad-abdullah/rms/include/rms/logger.h
  /home/muhammad-abdullah/rms/include/rms/sharded_queue.h
@@ -5525,6 +5528,7 @@ CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o
  /usr/include/c++/11/ratio
  /usr/include/c++/11/semaphore
  /usr/include/c++/11/shared_mutex
+ /usr/include/c++/11/span
  /usr/include/c++/11/sstream
  /usr/include/c++/11/stdexcept
  /usr/include/c++/11/stdlib.h

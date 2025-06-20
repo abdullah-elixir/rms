@@ -69,9 +69,10 @@ aeron::fragment_handler_t Messaging::fragHandler() {
         if (length < sizeof(std::uint8_t)) {
             return; // too small to read any header
         }
-        logWrapper->debug(4, "-----HEADER-----");
-        int64_t orderId = buffer.getInt64(offset + sizeof(std::uint8_t));
-        int32_t shardId = orderId % NUM_SHARDS;
+        logWrapper->debug(4, "-----Got New Message-----");
+        //dangerous, it will overflow after
+        uint8_t shardId = (++_shard_counter) % (NUM_SHARDS);
+        logWrapper->debug(4, "enqueued, shardId: {}", shardId);
         sharded_queue[shardId].enqueue(buffer, offset, length);
     };
 }

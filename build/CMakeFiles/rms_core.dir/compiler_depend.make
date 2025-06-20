@@ -5299,6 +5299,9 @@ CMakeFiles/rms_core.dir/src/risk_engine.cpp.o: /home/muhammad-abdullah/rms/src/r
   /usr/local/include/util/StringUtil.h
 
 CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o: /home/muhammad-abdullah/rms/src/sharded_queue.cpp \
+  /home/muhammad-abdullah/rms/include/rms/baseline/MessageHeader.h \
+  /home/muhammad-abdullah/rms/include/rms/baseline/Order.h \
+  /home/muhammad-abdullah/rms/include/rms/baseline/VarStringEncoding.h \
   /home/muhammad-abdullah/rms/include/rms/data_types.h \
   /home/muhammad-abdullah/rms/include/rms/logger.h \
   /home/muhammad-abdullah/rms/include/rms/sharded_queue.h \
@@ -5514,6 +5517,7 @@ CMakeFiles/rms_core.dir/src/sharded_queue.cpp.o: /home/muhammad-abdullah/rms/src
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/semaphore \
   /usr/include/c++/11/shared_mutex \
+  /usr/include/c++/11/span \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/stdlib.h \
@@ -6469,6 +6473,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 
 /home/muhammad-abdullah/rms/include/rms/utils/time_utils.h:
 
+/home/muhammad-abdullah/rms/include/rms/baseline/Order.h:
+
 /home/muhammad-abdullah/rms/src/risk_engine.cpp:
 
 /home/muhammad-abdullah/rms/src/pretrade_checks.cpp:
@@ -6672,6 +6678,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/spdlog/sinks/stdout_color_sinks.h:
+
+/home/muhammad-abdullah/rms/include/rms/baseline/MessageHeader.h:
 
 /usr/include/spdlog/sinks/sink-inl.h:
 
@@ -7295,6 +7303,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 
 /usr/include/spdlog/sinks/ansicolor_sink-inl.h:
 
+/home/muhammad-abdullah/rms/include/rms/baseline/VarStringEncoding.h:
+
 /usr/local/include/concurrent/AtomicArrayUpdater.h:
 
 /usr/include/c++/11/pstl/glue_algorithm_defs.h:
@@ -7756,6 +7766,8 @@ CMakeFiles/rms_core.dir/src/vcm_module.cpp.o: /home/muhammad-abdullah/rms/src/vc
 /usr/include/c++/11/bits/stl_tree.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/c++/11/span:
 
 /usr/local/include/rocksdb/universal_compaction.h:
 

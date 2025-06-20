@@ -7,7 +7,7 @@
 #include <array>
 #include <folly/container/F14Map.h>
 
-constexpr int NUM_SHARDS = 4;
+constexpr u_int8_t NUM_SHARDS = 4;
 constexpr int NUM_INSTRUMENTS = 1024;
 constexpr int ACCOUNTS_PER_SHARD = 256;
 
@@ -43,8 +43,8 @@ struct Order {
     uint32_t instrument_id;
     int64_t  quantity;
     double   price;
-    char     symbol[16];
-    char     side[4];   // "BUY" or "SELL"
+    std::string     symbol;
+    std::string     side;   // "BUY" or "SELL"
 };
 
 struct TradeExecution {

@@ -411,8 +411,8 @@ Order PersistenceManager::deserializeOrder(const std::string& data) {
     order.instrument_id = json["instrument_id"].asInt();
     order.quantity = json["quantity"].asInt();
     order.price = json["price"].asDouble();
-    strncpy(order.symbol, json["symbol"].asString().c_str(), sizeof(order.symbol) - 1);
-    strncpy(order.side, json["side"].asString().c_str(), sizeof(order.side) - 1);
+    //strncpy(order.symbol, json["symbol"].asString().c_str(), sizeof(order.symbol) - 1);
+    //strncpy(order.side, json["side"].asString().c_str(), sizeof(order.side) - 1);
     return order;
 }
 
