@@ -1,0 +1,44 @@
+database:
+  path: "/var/lib/risk_engine/db"
+  write_buffer_size: 67108864  # 64MB
+
+sharding:
+  count: 4
+
+risk_limits:
+  default_max_leverage: 2.0
+  default_max_drawdown: 0.1
+  default_max_order_rate: 100
+  default_max_concurrent_orders: 50
+  default_max_order_qty: 1000
+  default_max_order_notional: 1000000
+  default_price_tolerance: 0.01
+
+performance:
+  max_concurrent_orders: 1000
+  order_queue_size: 10000
+  position_update_batch_size: 100
+  checkpoint_interval: 300  # seconds
+
+logging:
+  level: "info"
+  file: "/var/log/risk_engine/risk_engine.log"
+  max_file_size: 5242880  # 5MB
+  max_files: 3
+
+metrics:
+  port: 9090
+  endpoint: "/metrics"
+  update_interval: 1  # seconds
+
+recovery:
+  checkpoint_dir: "/var/lib/risk_engine/checkpoints"
+  max_checkpoints: 5
+  auto_recovery: true
+
+monitoring:
+  health_check_interval: 5  # seconds
+  alert_threshold:
+    latency_ms: 100
+    error_rate: 0.01
+    memory_usage_mb: 1024

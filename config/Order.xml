@@ -1,0 +1,34 @@
+<sbe:messageSchema xmlns:sbe="http://fixprotocol.io/2016/sbe"
+                   xmlns:xi="http://www.w3.org/2001/XInclude"
+                   package="baseline"
+                   id="1"
+                   version="0"
+                   semanticVersion="5.2"
+                   description="Example base schema which can be extended."
+                   byteOrder="littleEndian">
+    <types>
+        <composite name="messageHeader" description="Message header">
+            <type name="blockLength" primitiveType="uint16"/>
+            <type name="templateId" primitiveType="uint16"/>
+            <type name="schemaId" primitiveType="uint16"/>
+            <type name="version" primitiveType="uint16"/>
+        </composite>
+        <composite name="varStringEncoding" description="Variable length UTF-8 String.">
+            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
+            <type name="varData" primitiveType="uint8" length="0" characterEncoding="UTF-8"/>
+        </composite>
+    </types>
+
+    <message name="Order" id="1" description="Order message" blockLength="32">
+        <!-- Fixed-length fields -->
+        <field name="order_id" id="1" type="uint64"/>
+        <field name="account_id" id="2" type="uint32"/>
+        <field name="instrument_id" id="3" type="uint32"/>
+        <field name="quantity" id="4" type="int64"/>
+        <field name="price" id="5" type="double"/>
+
+        <!-- Variable-length fields -->
+        <data name="symbol" id="6" type="varStringEncoding"/>
+        <data name="side" id="7" type="varStringEncoding"/>
+    </message>
+</sbe:messageSchema>
